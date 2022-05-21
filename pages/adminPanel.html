@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="../style.css" />
+
+    <title>Add test</title>
+  </head>
+  <body>
+    <section class="main--section">
+      <!-- ######## NAVBAR #########-->
+
+      <section class="dashbord">
+        <nav class="navbar">
+          <div class="navbar--top">
+            <div class="navbar--logo">
+              <img src="../assets/img/logo.png" alt="logo" />
+              <h2>clever</h2>
+            </div>
+            <!-- end of navbar--logo  -->
+            <div class="navbar--list">
+              <ul>
+                <li>
+                  <div class="nav--icon"><i class="bi bi-house"></i></div>
+                  <a href="../index.html">Dashboard</a>
+                </li>
+                <li>
+                  <div class="nav--icon"><i class="bi bi-chat"></i></div>
+                  <a href="./test.html">Test CRUD</a>
+                </li>
+                <li>
+                  <div class="nav--icon"><i class="bi bi-people"></i></div>
+                  <span>Users</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--   END OF TOP-NAVBAR  -->
+          <div class="navbar--bottom">
+            <ul>
+              <li>
+                <div class="nav--icon"><i class="bi bi-person"></i></div>
+                <a href="#">Account</a>
+              </li>
+              <li>
+                <div class="nav--icon">
+                  <i class="bi bi-box-arrow-left"></i>
+                </div>
+                <span>Logout</span>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </section>
+      <!-- ######## END OF NAVBAR #########-->
+      <section class="right--side">
+        <!-- RIGHT--SIDE TOP -->
+        <div class="right--side__top">
+          <div class="flex">
+            <h1 class="head--flex">
+              <ion-icon name="chevron-back-outline"></ion-icon>
+              <span>Create new test</span>
+            </h1>
+            <div class="test--create__buttons">
+              <button class="show--test create--test__btn">
+                <i class="bi bi-eye"></i>
+                <span>Testni oldindan ko‘rish</span>
+              </button>
+              <button class="save--test create--test__btn">
+                <img src="../assets/img/save.png" alt="save" />
+                <span>Save</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- end of rigth--side__top -->
+        <div class="add--test">
+          <div class="add--test__head">
+            <div>
+              <h3>Test qo‘shish</h3>
+              <p>
+                Ariza topshiruvchining bilim va ko'nikmalarini tekshirish uchun
+                savollar formasini yarating
+              </p>
+            </div>
+            <button class="add--test__btn">
+              <i class="bi bi-plus"></i> <span>Qo'shish</span>
+            </button>
+          </div>
+          <!-- end of head -->
+          <div class="add--test__body">
+            <div class="flex">
+              <h3>Bir nechta variant tanlanuvchi savol</h3>
+              <div class="add--body__btns">
+                <button>
+                  <i class="bi bi-plus"></i><span>Yana qo'shish</span>
+                </button>
+                <button><i class="bi bi-trash3"></i></button>
+              </div>
+            </div>
+
+            <form>
+              <label for="user--question">Savol nomi</label>
+              <input
+                type="text"
+                id="user--question"
+                placeholder="Savol nomini kiriting"
+              />
+              <ul class="add--question--list">
+                <li>Variantlar</li>
+                <li>
+                  <input type="radio" name="add" id="new--question" />
+                  <label for="new--question">
+                    <input type="text" placeholder="Javobingizni kiriting" />
+                    <i class="bi bi-x"></i>
+                  </label>
+                </li>
+                <li>
+                  <input type="radio" name="add" id="new--question2" />
+                  <label for="new--question2">
+                    <input type="text" placeholder="Javobingizni kiriting" />
+                    <i class="bi bi-x"></i>
+                  </label>
+                </li>
+              </ul>
+            </form>
+          </div>
+        </div>
+        <!-- end of add--test  -->
+      </section>
+      <!--  end of rightSide  -->
+    </section>
+  </body>
+</html>
