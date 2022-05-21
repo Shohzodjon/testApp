@@ -6,7 +6,7 @@ const error1 = document.querySelector(".error1");
 const error2 = document.querySelector(".error2");
 const error3 = document.querySelector(".error3");
 const registerButton = document.querySelector(".register--button");
-const registerLink = document.querySelector(".register--link");
+const register = document.querySelector(".register");
 let nameIs = false;
 let emailIs = false;
 let passIs = false;
@@ -69,11 +69,24 @@ registerButton.addEventListener("click", (e) => {
     userName.value = "";
     userEmail.value = "";
     userPassword.value = "";
-    registerLink.href = "./main.html";
+    register.style.display = "none";
   }
 });
 
 // ? END OF REGISTER ELEMENTS
+// NAVBAR CHOOSE
+const navLi = document.querySelectorAll(".navbar--li");
+console.log(navLi);
+for (let i = 0; i <= navLi.length - 1; i++) {
+  let li = navLi[i];
+  li.addEventListener("click", (e) => {
+    e.target.style.color = "blue";
+    console.log("target", e);
+  });
+}
+
+// END OF NAVBAR
+//  $$$$$$$$$$$$$$$$$$
 
 const grid = document.querySelector(".grid");
 const data = [
