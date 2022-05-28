@@ -1,7 +1,7 @@
 :root {
   --text-color1: #27272e; /* h2 */
   --text-color2: #425466;
-  --input-text: #7a828a;
+  --input-text: #88929c;
   --testText-color: #1a202c;
   --aplicant-color: #718096;
   --active-color: #4c6fff;
@@ -23,9 +23,7 @@
 html {
   font-size: 62.5%;
 }
-body {
-  position: relative;
-}
+
 ul {
   list-style: none;
 }
@@ -48,21 +46,19 @@ a:active {
 .register {
   width: 100vw;
   max-width: 1345px;
-  height: 100%;
-  max-height: 750px;
+  height: 650px;
   background: var(--bg-color);
   border-radius: var(--border-radius);
   margin: 0.1rem auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: 0.5s linear all;
+  padding: 0.5rem;
 }
 .close--register {
   transform: translateY(-200%);
 }
 .register--head {
   display: flex;
+  width: 160px;
+  margin: 2rem auto;
   align-items: center;
   justify-content: center;
   padding: 1.5rem 0;
@@ -115,10 +111,13 @@ a:active {
   padding: 0 1rem;
   font-size: 1.4rem;
   line-height: 1.4rem;
+  color: #000;
+}
+.register--input::placeholder {
   color: var(--input-text);
 }
 .register--input:focus {
-  outline: 1px solid aqua;
+  outline: 1px solid var(--active-color);
 }
 .error--msg {
   color: crimson;
@@ -149,34 +148,31 @@ a:active {
   border-radius: var(--border-radius);
   margin: 0.1rem auto;
   max-width: 1350px;
-  max-height: 750px;
 }
 
 /*   ############################  MAIN SECTION ########## */
 .main--section {
-  width: 98vw;
-  height: 140vh;
+  /* width: 98vw; */
+
   max-width: 1350px;
   min-width: 1320px;
+  margin: 0 auto;
   background: var(--bg-color);
   border-radius: var(--border-radius);
-  margin: 0.1rem auto;
   overflow: hidden;
+
   padding: 0.2rem;
   display: flex;
+  position: relative;
 }
 
 /*  DASHBOARD */
 .dashbord {
   background: #fff;
-  width: 20%;
-  height: 100%;
-  max-height: 780px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-height: 770px;
-  z-index: 222;
+  width: 18%;
+  height: 650px;
+  max-height: 660px;
+  min-height: 0px;
 }
 
 .navbar {
@@ -218,13 +214,18 @@ a:active {
 }
 .navbar--li {
   position: relative;
+  transition: all linear 0.4s;
+  border-radius: 0.5rem;
+}
+.navbar--li:hover {
+  background: #efef;
 }
 .active--span1 {
   position: absolute;
   height: 100%;
   width: 2px;
   top: 0;
-  left: -15px;
+  left: -10px;
   background: none;
 }
 .active--span {
@@ -232,13 +233,14 @@ a:active {
   height: 100%;
   width: 2px;
   top: 0;
-  left: -15px;
+  left: -10px;
   background: none;
 }
 .navbar--list ul > li > a {
   width: 100%;
   height: 100%;
-  margin: 0.4rem 0;
+  margin: 0.4rem 1rem;
+  padding: 0.7rem;
 }
 .navbar--list > ul > li > span {
   color: var(--text-color2);
@@ -250,7 +252,7 @@ a:active {
 }
 .navbar--bottom {
   margin-bottom: 1rem;
-  margin-top: 33rem;
+  margin-top: 27rem;
 }
 .navbar--bottom > ul > li {
   display: flex;
@@ -258,28 +260,25 @@ a:active {
   gap: 2rem;
   font-size: 1.4rem;
   margin: 2rem 0;
+  width: 100%;
 }
 .navbar--bottom > ul > li > a {
   width: 100%;
   height: 100%;
+  margin: 0.4rem 1rem;
+  padding: 0.7rem;
 }
 
 /*   END OF DASHBORD */
 /*   RIGHT SIDE  */
 .right--side {
-  width: 80%;
-  margin-left: 20%;
-  margin-top: 7%;
+  width: 1200px;
 }
 .right--side__top {
   background: #fff;
-  width: 80%;
+  width: 100%;
   border-left: 1px solid var(--bg-color);
   padding: 1rem 2rem;
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 222;
 }
 .flex {
   display: flex;
@@ -332,33 +331,48 @@ a:active {
 .uic--li {
   position: relative;
 }
-.span {
+
+.uic--li_1 {
   position: absolute;
-  bottom: 0px;
-  left: 1%;
-  width: 6%;
+  top: 14%;
+  left: 18%;
+  width: 4%;
   height: 2px;
   border-radius: 0.4rem;
   background: var(--active-color);
 }
 .uic--li_2 {
-  left: 11%;
+  position: absolute;
+  top: 13.8%;
+  left: 25.3%;
+  width: 6%;
+  height: 2px;
+  border-radius: 0.4rem;
+  background: var(--active-color);
 }
 
 /*     USER LIST  */
 .users--list {
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem;
+  height: 558px;
+  overflow-y: scroll;
 }
 .grid {
   margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  margin-bottom: 2rem;
 }
 .grid--item {
   background: #fff;
   border-radius: 16px;
   padding: 1.5rem;
+  transition: all 0.5s linear;
+}
+.grid--item:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+    rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
 .item--img {
   display: flex;
@@ -371,6 +385,11 @@ a:active {
 .img {
   position: relative;
   margin-bottom: 1rem;
+}
+.pages--link {
+  font-size: 1.4rem;
+  margin: 0.6rem 0;
+  color: var(--testText-color);
 }
 .img .infinity {
   position: absolute;
@@ -426,12 +445,16 @@ a:active {
 /*   ############################  END OF MAIN SECTION ########## */
 
 /*   ######  ###### Begin applicants list ############ */
+
 .applicants--section {
   background: #fafafb;
-  padding: 1rem 2rem;
-
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
   margin-top: 1.9rem;
-  border-radius: 1.5rem;
+  width: 1065px;
+  height: 540px;
+  overflow-y: scroll;
+  margin: 1rem;
 }
 .applicant--level {
   display: flex;
@@ -622,14 +645,18 @@ a:active {
   color: #425466;
 }
 .account--form__flex input {
-  padding: 0.8rem 1rem;
+  padding: 1.2rem;
   border: none;
   outline: none;
+  border: 1px solid #fff;
   width: 100%;
   background: #ffffff;
   box-shadow: 0px 1px 2px rgba(50, 50, 71, 0.08),
     0px 0px 1px rgba(50, 50, 71, 0.2);
   border-radius: 6px;
+}
+.account--form__flex input:focus {
+  border-color: var(--active-color);
 }
 .account--form label {
   display: block;
@@ -646,9 +673,16 @@ a:active {
   box-shadow: 0px 1px 2px rgba(50, 50, 71, 0.08),
     0px 0px 1px rgba(50, 50, 71, 0.2);
   border-radius: 6px;
-  padding: 0.8rem 1rem;
+  padding: 1.2rem;
+  border: 1px solid #fff;
   outline: none;
   margin-bottom: 0.5rem;
+}
+.account--form input[type="email"]:focus {
+  border-color: var(--active-color);
+}
+.account--form .input--address:focus {
+  border-color: var(--active-color);
 }
 .account--btn {
   padding: 1rem 1.5rem;
@@ -696,7 +730,7 @@ a:active {
 .test--render {
   background-color: #fff;
   width: 97%;
-  margin: -0.5rem auto;
+  margin: 1.5rem auto;
   padding: 1rem 0;
   border-radius: 1rem;
 }
@@ -909,7 +943,11 @@ a:active {
 }
 .add--test {
   width: 95%;
-  margin: 2rem auto;
+  margin: 0 auto;
+  padding: 1rem 0 0;
+  margin-top: 1rem;
+  height: 570px;
+  overflow-y: scroll;
 }
 .add--test__head {
   background: var(--active-color);
@@ -917,9 +955,9 @@ a:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 1.3rem 2rem;
   border-radius: 1rem;
-  margin-top: -1.4rem;
+  margin-top: 1.4rem;
 }
 .add--test__head h3 {
   font-size: 2rem;

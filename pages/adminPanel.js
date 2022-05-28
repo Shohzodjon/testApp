@@ -300,3 +300,16 @@ saveQuestion.addEventListener("click", () => {
   console.log("new", obj);
   setLocalStorage(newObject);
 });
+
+let time = new Date();
+console.log(time);
+let day = time.getDay();
+console.log(day);
+let month = time.getMonth();
+console.log("month", month);
+let clock = time.getHours();
+console.log("clock", clock);
+let minut = time.getMinutes();
+console.log("min", minut);
+let secund = time.getSeconds();
+console.log("secund", secund);

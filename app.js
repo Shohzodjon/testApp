@@ -164,7 +164,9 @@ for (let i = 0; i <= data.length - 1; i++) {
         }"><i class="bi bi-three-dots"></i></a></button>
     </div>
      <h4>${data[i].user}</h4>
-      <h5>${data[i].title}</h5>
+      <a href="${data[i].link ? data[i].link : "#"}" class="pages--link">${
+      data[i].title
+    }</a>
     
     <ul>
       <li><i class="bi bi-calendar-event"></i> <span>Thu. 24</span></li>
@@ -191,7 +193,9 @@ for (let i = 0; i <= data.length - 1; i++) {
         </button>
     </div>
      <h4>${data[i].user}</h4>
-      <h5>${data[i].title}</h5>
+     <a href="${data[i].link ? data[i].link : "#"}" class="pages--link">${
+      data[i].title
+    }</a>
         <div id="test">
         <p class="item--span">${data[i].text}</p>
         <span class="test--span">${data[i].text2}<span>
