@@ -5,13 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
-    <title>Crud Test</title>
+    <title>Sign Up</title>
   </head>
   <body>
-   
-    <!-- #######  END OF REGISTER PAGE ######### -->
-    <section class="register none">
+    <section class="register">
       <div class="register--head">
         <img src="./assets/img/logo.png" alt="logo" />
         <h2>clever</h2>
@@ -53,159 +50,13 @@
             <span class="error3"></span>
           </li>
           <li>
-            <button type="submit" class="register--button"> Register</button>
+            <button type="submit" class="register--button">
+              <a href="./main.html"> Register</a>
+            </button>
           </li>
         </ul>
       </form>
     </section>
-
-    <!-- ########## BEGIN SIGN UP PAGE ########## -->
-    <section class="sign--up none ">
-        <div class="register--head">
-            <img src="./assets/img/logo.png" alt="logo" />
-            <h2>clever</h2>
-          </div>
-          <form class="register--form">
-              <h2> 👋</h2>
-            <h2>Create your account</h2>
-            <small class="register--small">Let's build someting great</small>
-            <ul>
-            
-              <li>
-                <label for="user--email" class="register--label">E - mail</label>
-                <input
-                  type="email"
-                  class="register--input"
-                  placeholder="Type your e-mail"
-                />
-                <span class="error2"></span>
-              </li>
-              <li>
-                <label for="user--password" class="register--label">
-                  Password
-                </label>
-                <input
-                  type="password"
-                  placeholder="Type your password"
-                  class="register--input"
-                />
-                <span class="error3"></span>
-              </li>
-              <li>
-                <button class="register--button">Register</button>
-              </li>
-            </ul>
-    </section>
-    <!-- ########## END OF SIGN UP PAGE ########## -->
- 
-    <section class="main--section">
-<!-- ######## NAVBAR #########-->
-
- <section class="dashbord">
-     <nav class="navbar">
-         <div class="navbar--top">
-             <div class="navbar--logo">
-                 <img src="./assets/img/logo.png" alt="logo">
-                 <h2>clever</h2>
-             </div>
-             <!-- end of navbar--logo  -->
-        <div class="navbar--list">
-            <ul class="navbar--ul">
-        <li class="navbar--li"><div class="nav--icon"><i class="bi bi-house"></i></div>
-       <a href="#">Dashboard</a>
-        </li>
-        <li class="navbar--li">
-            <div class="nav--icon"><i class="bi bi-chat"></i></div>
-           <a href="./pages/test.html">Test CRUD</a>
-        </li>
-        <li class="navbar--li">
-            <div class="nav--icon"><i class="bi bi-people"></i></div>
-            <a href="#">Users</a>
-        </li>
-        
-    </ul>
-</div>
-         </div>
-         <!--   END OF TOP-NAVBAR  -->
-         <div class="navbar--bottom">
-             <ul>
-                 <li>
-                     <div class="nav--icon"><i class="bi bi-person"></i></div>
-                     <a href="./pages/userProfile.html">Account</a>
-                 </li>
-                 <li>
-                     <div class="nav--icon"><i class="bi bi-box-arrow-left"></i></div>
-                     <a href="#">Logout</a>
-                 </li>
-             </ul>
-         </div>
-     </nav>
- </section>
-<!-- ######## END OF NAVBAR #########-->
-  <section class="right--side ">
-
-      <!-- RIGHT--SIDE TOP -->
-      <div class="right--side__top">
-          <div class="flex">
-              <h1>Dashbord</h1>
-              <button class="create--btn" type="button"><i class="bi bi-plus"></i><a href="./pages/adminPanel.html" style="color: #fff;">Create </a> </button>
-          </div>
-          <div class="change--cart">
-              <ul>
-                  <li class="change--cart__li" data-num="1">Tests</li>
-                  <li class="change--cart__li2" data-num="2">Applicants</li>
-              </ul>
-          </div>
-      </div>
-
-      <section class="users--list">
-          <div class="grid">
-          </div>
-         </section>
-<!-- end of user--list  -->
-<!--  Begin applicants list  -->
-
-<section class="applicants--section none">
-    <ul class="applicant--level">
-        <li><b>USER</b></li>
-        <li><b>RESULT</b></li>
-        <li><b>MODIFIED</b></li>
-        <li ><b>SUBJECT</b></li>
-    </ul>
-    <div class="applicant--list">
-      <div class="first--info">
-        <div class="flex">
-          <div class="first--info__style">
-            <i class="bi bi-card-image"></i>
-          </div>
-          <div class="info--text">
-            <h5>Toshmatov Eshmat</h5>
-            <small>toshmat@eshmatov.uz</small>
-          </div>
-        </div>
-      </div>
-      <!-- end  of first--info  -->
-      <div class="second--info">
-        <p>5/10</p>
-      </div>
-      <!-- end of second--info  -->
-      <div class="third--info">
-        <p>5/23/2020, 10:45 AM</p>
-      </div>
-      <!--  end  of third--info  -->
-      <div class="fourth--info">
-        <button>Mathematics</button>
-      </div>
-    </div>
-</section>
-<!-- end of applicants list  -->
-
-        </section>
-<!--  end of rightSide  -->
-
-    </section>
-
-
-<script src="./app.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>

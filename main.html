@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <title>Crud Test</title>
+  </head>
+  <body>
+   
+    <!-- #######  END OF REGISTER PAGE ######### -->
+    <section class="register none">
+      <div class="register--head">
+        <img src="./assets/img/logo.png" alt="logo" />
+        <h2>clever</h2>
+      </div>
+      <form class="register--form">
+        <h2>Create your account</h2>
+        <small class="register--small">It’s free and easy</small>
+        <ul>
+          <li>
+            <label for="user--name" class="register--label">Full name</label>
+            <input
+              type="text"
+              id="user--name"
+              placeholder="Enter your name ... "
+              class="register--input"
+            />
+            <span class="error1"></span>
+          </li>
+          <li>
+            <label for="user--email" class="register--label">E - mail</label>
+            <input
+              type="email"
+              class="register--input"
+              placeholder="Type your e-mail"
+              id="user--email"
+            />
+            <span class="error2"></span>
+          </li>
+          <li>
+            <label for="user--password" class="register--label">
+              Password
+            </label>
+            <input
+              type="password"
+              placeholder="Type your password"
+              class="register--input"
+              id="user--password"
+            />
+            <span class="error3"></span>
+          </li>
+          <li>
+            <button type="submit" class="register--button"> Register</button>
+          </li>
+        </ul>
+      </form>
+    </section>
+
+    <!-- ########## BEGIN SIGN UP PAGE ########## -->
+    <section class="sign--up none ">
+        <div class="register--head">
+            <img src="./assets/img/logo.png" alt="logo" />
+            <h2>clever</h2>
+          </div>
+          <form class="register--form">
+              <h2> 👋</h2>
+            <h2>Create your account</h2>
+            <small class="register--small">Let's build someting great</small>
+            <ul>
+            
+              <li>
+                <label for="user--email" class="register--label">E - mail</label>
+                <input
+                  type="email"
+                  class="register--input"
+                  placeholder="Type your e-mail"
+                />
+                <span class="error2"></span>
+              </li>
+              <li>
+                <label for="user--password" class="register--label">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  placeholder="Type your password"
+                  class="register--input"
+                />
+                <span class="error3"></span>
+              </li>
+              <li>
+                <button class="register--button">Register</button>
+              </li>
+            </ul>
+    </section>
+    <!-- ########## END OF SIGN UP PAGE ########## -->
+ 
+    <section class="main--section">
+<!-- ######## NAVBAR #########-->
+
+ <section class="dashbord">
+     <nav class="navbar">
+         <div class="navbar--top">
+             <a class="navbar--logo" href="#">
+                 <img src="./assets/img/logo.png" alt="logo">
+                 <h2>clever</h2>
+             </a>
+             <!-- end of navbar--logo  -->
+        <div class="navbar--list">
+            <ul class="navbar--ul">
+             <li class="navbar--li">
+               <a href="#"><span class="nav--icon"><i class="bi bi-house"></i></span>
+                Dashboard
+        
+                    </a>
+                    <span class="active--span"></span>
+                 </li>
+        <li class="navbar--li">
+           <a href="./pages/test.html"><span class="nav--icon"><i class="bi bi-chat"></i></span>Test CRUD</a>
+           <span class="active--span"></span>
+        </li>
+        <li class="navbar--li">
+            
+            <a href="#">
+              <span class="nav--icon"><i class="bi bi-people"></i></span>
+              Users</a>
+              <span class="active--span"></span>
+        </li>
+        
+    </ul>
+</div>
+         </div>
+         <!--   END OF TOP-NAVBAR  -->
+         <div class="navbar--bottom">
+             <ul>
+                 <li class="navbar--li">
+                     
+                     <a href="./pages/userProfile.html">
+                      <span class="nav--icon"><i class="bi bi-person"></i></span>  
+                      Account</a>
+                      <span class="active--span1"></span>
+                 </li>
+                 <li class="navbar--li">
+                     
+                     <a href="#">
+                      <span class="nav--icon"><i class="bi bi-box-arrow-left"></i></span> 
+                      Logout</a>
+                      <span class="active--span1"></span>
+                 </li>
+             </ul>
+         </div>
+     </nav>
+ </section>
+<!-- ######## END OF NAVBAR #########-->
+  <section class="right--side ">
+
+      <!-- RIGHT--SIDE TOP -->
+      <div class="right--side__top">
+          <div class="flex">
+              <h1>Dashbord</h1>
+              <button class="create--btn" type="button">
+                <a href="./pages/adminPanel.html" style="color: #fff;"> 
+                  <i class="bi bi-plus"></i><span>Create</span> </a>
+                 </button>
+          </div>
+          <div class="change--cart">
+              <ul class="uic--group">
+                  <li class="uic--li" data-num="1" onclick="openContent(event, 'userLists', 'uic--li_1')"><p>Tests</p>
+                   <span class="span uic--li_1"></span>
+                  </li>
+                  <li class="uic--li" data-num="2" onclick="openContent(event, 'applicantList', 'uic--li_2')"><p>Applicants</p>
+                  <span class="span uic--li_2 "></span>
+                  </li>
+              </ul>
+          </div>
+      </div>
+
+      <section class="users--list tabContent" id="userLists">
+          <div class="grid">
+          </div>
+         </section>
+<!-- end of user--list  -->
+<!--  Begin applicants list  -->
+
+<section class="applicants--section tabContent" id="applicantList">
+    <ul class="applicant--level">
+        <li><b>USER</b></li>
+        <li><b>RESULT</b></li>
+        <li><b>MODIFIED</b></li>
+        <li ><b>SUBJECT</b></li>
+    </ul>
+    <div class="applicant--list">
+      
+    </div>
+   
+</section>
+ 
+<!-- end of applicants list  -->
+
+        </section>
+<!--  end of rightSide  -->
+
+    </section>
+
+
+<script src="./app.js"></script>
+  </body>
+</html>

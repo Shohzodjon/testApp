@@ -1,130 +1,119 @@
 // REGISTER ELEMENTS
-const userName = document.querySelector("#user--name");
-const userEmail = document.querySelector("#user--email");
-const userPassword = document.querySelector("#user--password");
-const error1 = document.querySelector(".error1");
-const error2 = document.querySelector(".error2");
-const error3 = document.querySelector(".error3");
-const registerButton = document.querySelector(".register--button");
-const register = document.querySelector(".register");
-let nameIs = false;
-let emailIs = false;
-let passIs = false;
 
-function checkName(userName) {
-  if (userName.value.trim() === "") {
-    error1.textContent = "Required";
-    error1.classList.add("error--msg");
-    nameIs = false;
-  } else if (
-    userName.value.trim().length >= 1 &&
-    userName.value.trim().length <= 4
-  ) {
-    error1.textContent = "Must be 5 charecter";
-    error1.classList.add("error--msg");
-    nameIs = false;
-  } else {
-    error1.textContent = "";
-    error1.classList.remove("error--msg");
-    nameIs = true;
-  }
-}
+// ? END OF REGISTER ELEMENTS
 
-function checkEmail(userEmail) {
-  let emailCheck =
-    /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
-  if (emailCheck.test(userEmail.value)) {
-    error2.textContent = "";
-    error2.classList.remove("error--msg");
-    emailIs = true;
-  } else {
-    error2.textContent = " Invalid email ";
-    error2.classList.add("error--msg");
-    emailIs = false;
-  }
-}
-function checkPassword(userPassword) {
-  let text = userPassword.value;
-  if (text.trim() === "") {
-    error3.textContent = "Password required";
-    error3.classList.add("error--msg");
-    passIs = false;
-  } else if (text.trim().length >= 1 && text.trim().length <= 6) {
-    error3.textContent = "Password is less than 7";
-    error3.classList.add("error--msg");
-    passIs = false;
-  } else {
-    error3.textContent = "";
-    error3.classList.remove("error--msg");
-    passIs = true;
-  }
-}
+const wrapList = document.querySelector(".navbar--list");
+const activeSpan = document.querySelectorAll(".active--span");
+const navbarBottom = document.querySelector(".navbar--bottom");
+const activeSpan1 = document.querySelectorAll(".active--span1");
 
-registerButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  checkName(userName);
-  checkEmail(userEmail);
-  checkPassword(userPassword);
-  if (nameIs && emailIs && passIs) {
-    userName.value = "";
-    userEmail.value = "";
-    userPassword.value = "";
-    register.style.display = "none";
+wrapList.addEventListener("click", (e) => {
+  if (!e.target.closest(".navbar--li")) return;
+  else {
+    for (let i = 0; i <= activeSpan.length - 1; i++) {
+      activeSpan[i].style.display = "none";
+    }
+    let li = e.target.closest(".navbar--li");
+    li.childNodes[3].style.display = "block";
+    li.childNodes[3].style.background = "#4c6fff";
+  }
+});
+///
+
+navbarBottom.addEventListener("click", (e) => {
+  if (!e.target.closest(".navbar--li")) return;
+  else {
+    console.log("click");
+    for (let i = 0; i <= activeSpan1.length - 1; i++) {
+      activeSpan1[i].style.display = "none";
+    }
+    let li = e.target.closest(".navbar--li");
+    li.childNodes[3].style.display = "none";
+    li.childNodes[3].style.background = "#4c6fff";
   }
 });
 
-// ? END OF REGISTER ELEMENTS
-// NAVBAR CHOOSE
-const navLi = document.querySelectorAll(".navbar--li");
-console.log(navLi);
-for (let i = 0; i <= navLi.length - 1; i++) {
-  let li = navLi[i];
-  li.addEventListener("click", (e) => {
-    e.target.style.color = "blue";
-    console.log("target", e);
-  });
+//  ###########  TAB #####333#####
+// uicList.forEach((i) => {
+//   for (let j = 0; j <= spans.length - 1; j++) {
+//     spans[j].classList.remove("bottom--span");
+//   }
+//   i.addEventListener("click", () => {
+//     document
+//       .querySelector(`.uic--li_${i.dataset.num}`)
+//       .classList.toggle("bottom--span");
+//   });
+// });
+
+function openContent(evt, cityName, span) {
+  let i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabContent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  const spans = document.querySelectorAll(".span");
+  for (let i = 0; i <= spans.length - 1; i++) {
+    spans[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("uic--li");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    document
+      .querySelector(`.uic--li_${tablinks[i].dataset.num}`)
+      .classList.add("bottom--span");
+  }
+  document.getElementById(cityName).style.display = "block";
+  document.querySelector(`.${span}`).style.display = "block";
+  evt.currentTarget.className += "active";
 }
 
-// END OF NAVBAR
-//  $$$$$$$$$$$$$$$$$$
+//  ########### END OF  TAB #####333#####
+
+// #####
 
 const grid = document.querySelector(".grid");
 const data = [
   {
     user: "Headline label",
-    title: "Label, Label",
+    title: "JavaScript dastulash tili test",
     text: "Badge",
     text2: "label",
+    link: "./pages/test.html",
   },
   {
     user: "Headline label",
-    title: "Label, Label",
+    title: "Java dasturlash tili test",
     text: "Badge",
     text2: "label",
+    link: "./pages/java.html",
   },
   {
     user: "Headline label",
-    title: "Label, Label",
+    title: "C++ dasturlash tili test",
     text: "Badge",
     text2: "label",
+    link: "./pages/cpp.html",
   },
   {
     user: "Headline label",
-    title: "Label, Label",
+    title: "Python dasturlash tili test",
     text: "Badge",
     text2: "label",
+    link: "./pages/python.html",
   },
   {
     user: "Headline label",
-    title: "Label, Label",
+    title: "Node JS dasturlash tili test",
     text: "Badge",
     text2: "label",
+    link: "./pages/node.html",
   },
   {
     user: "Headline label",
-    title: "Label, Label",
+    title: "Flutter dasturlash tili testi",
     text: "Badge",
     text2: "label",
+    link: "./pages/flutter.html",
   },
   {
     user: "Headline label",
@@ -169,7 +158,10 @@ for (let i = 0; i <= data.length - 1; i++) {
             <img src="./assets/img/Image.png" alt="img">
             <img src="./assets/img/infinity.png" alt="infinite" class="infinity">
         </div>
-        <p><i class="bi bi-three-dots"></i></p>
+        <button class="change--file">
+        <a href="${
+          data[i].link ? data[i].link : "#"
+        }"><i class="bi bi-three-dots"></i></a></button>
     </div>
      <h4>${data[i].user}</h4>
       <h5>${data[i].title}</h5>
@@ -189,7 +181,14 @@ for (let i = 0; i <= data.length - 1; i++) {
         <div class="img">
             <img src="./assets/img/Image.png" alt="img">
         </div>
-        <p><i class="bi bi-three-dots"></i></p>
+       
+        <button class="change--file">
+        
+        <a href="${
+          data[i].link ? data[i].link : "#"
+        }"><i class="bi bi-three-dots"></i>
+        </a>
+        </button>
     </div>
      <h4>${data[i].user}</h4>
       <h5>${data[i].title}</h5>
@@ -204,7 +203,8 @@ for (let i = 0; i <= data.length - 1; i++) {
 
   grid.insertAdjacentHTML("beforeEnd", item);
 }
-// BEGIN APPLICANTS LIST
+
+// BEGIN APPLICANTS LISTS
 
 const applicantSection = document.querySelector(".applicants--section");
 

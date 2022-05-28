@@ -18,24 +18,33 @@
       <section class="dashbord">
         <nav class="navbar">
           <div class="navbar--top">
-            <div class="navbar--logo">
+            <a href="#" class="navbar--logo">
               <img src="../assets/img/logo.png" alt="logo" />
               <h2>clever</h2>
-            </div>
+            </a>
             <!-- end of navbar--logo  -->
             <div class="navbar--list">
               <ul>
-                <li>
-                  <div class="nav--icon"><i class="bi bi-house"></i></div>
-                  <a href="../index.html">Dashboard</a>
+                <li class="navbar--li">
+                  <a href="../main.html">
+                    <span class="nav--icon"><i class="bi bi-house"></i></span>
+                    Dashboard</a
+                  >
+                  <span class="active--span"></span>
                 </li>
-                <li>
-                  <div class="nav--icon"><i class="bi bi-chat"></i></div>
-                  <a href="./test.html">Test CRUD</a>
+                <li class="navbar--li">
+                  <a href="./test.html">
+                    <span class="nav--icon"><i class="bi bi-chat"></i></span>
+                    Test CRUD</a
+                  >
+                  <span class="active--span"></span>
                 </li>
-                <li>
-                  <div class="nav--icon"><i class="bi bi-people"></i></div>
-                  <a href="#">Users</a>
+                <li class="navbar--li">
+                  <a href="#">
+                    <span class="nav--icon"><i class="bi bi-people"></i></span>
+                    Users</a
+                  >
+                  <span class="active--span"></span>
                 </li>
               </ul>
             </div>
@@ -43,15 +52,21 @@
           <!--   END OF TOP-NAVBAR  -->
           <div class="navbar--bottom">
             <ul>
-              <li>
-                <div class="nav--icon"><i class="bi bi-person"></i></div>
-                <a href="#">Account</a>
+              <li class="navbar--li">
+                <a href="#">
+                  <span class="nav--icon"><i class="bi bi-person"></i></span>
+                  Account</a
+                >
+                <span class="active--span1"></span>
               </li>
-              <li>
-                <div class="nav--icon">
-                  <i class="bi bi-box-arrow-left"></i>
-                </div>
-                <a href="#">Logout</a>
+              <li class="navbar--li">
+                <a href="#">
+                  <span class="nav--icon">
+                    <i class="bi bi-box-arrow-left"></i>
+                  </span>
+                  Logout</a
+                >
+                <span class="active--span1"></span>
               </li>
             </ul>
           </div>
@@ -63,26 +78,40 @@
         <div class="right--side__top">
           <div class="flex">
             <h1>Account Settings</h1>
+            <div class="user--profile">
+              <h2 class="user--profile--name"></h2>
+              <h2 class="user--profile--lastname"></h2>
+            </div>
           </div>
         </div>
         <!-- end of rigth--side__top -->
         <div class="user--account">
           <div class="user--img__upload">
             <div class="user--account__flex">
-              <img src="../assets/img/user_img.png" alt="img" />
+              <img
+                src="../assets/img/user_img.png"
+                alt="img"
+                class="user--img"
+                id="myImg"
+              />
               <div class="user--account__info">
                 <h3>Heather Wright</h3>
                 <p>PNG or JPG no bigger than 1000px wide and tall.</p>
               </div>
             </div>
+
             <div class="upload--icon">
-              <p>
-                <label for="user--picture"
-                  ><i class="bi bi-upload"></i>
-                  <input type="file" id="user--picture"
-                /></label>
-                Upload
-              </p>
+              <label for="user--picture"
+                ><i class="bi bi-upload"></i>
+                <input
+                  type="file"
+                  id="user--picture"
+                  accept="img/png, img/jpg"
+                  name="fileupload"
+                />
+
+                Upload</label
+              >
             </div>
           </div>
 
@@ -95,7 +124,9 @@
                   type="text"
                   id="account--name"
                   placeholder="First name"
+                  autocomplete="off"
                 />
+                <small class="error1"></small>
               </div>
               <div>
                 <label for="account--lastname">Last name</label>
@@ -103,18 +134,39 @@
                   type="text"
                   id="account--lastname"
                   placeholder="Last name"
+                  autocomplete="off"
                 />
+                <small class="error2"></small>
               </div>
             </div>
-            <label for="account--email">Email</label>
-            <input type="email" placeholder="Email" />
-            <label for="account--adress">Address</label>
-            <input type="text" placeholder="Address" class="input--address" />
+            <div>
+              <label for="account--email">Email</label>
+              <input
+                type="email"
+                placeholder="Email"
+                id="account--email"
+                autocomplete="off"
+              />
+              <small class="error3"></small>
+            </div>
+            <div>
+              <label for="account--adress">Address</label>
+              <input
+                type="text"
+                placeholder="Address"
+                class="input--address"
+                id="account--adress"
+                autocomplete="off"
+              />
+              <small class="error4"></small>
+            </div>
+
             <button class="account--btn">Save changes</button>
           </form>
         </div>
       </section>
       <!--  end of rightSide  -->
     </section>
+    <script src="./userProfile.js"></script>
   </body>
 </html>
