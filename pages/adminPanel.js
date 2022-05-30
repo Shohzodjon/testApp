@@ -421,12 +421,238 @@ function checkArrayInfo(js, cpp, fl, py, ja, node) {
   ) {
     checkEmpty.textContent = "Yangi testlar qoshilmagan";
   } else {
-    allCppQuestion(cpp);
-    allFlQuestion(fl);
-    allJaQuestion(ja);
-    allJsQuestion(js);
-    allNodeQuestion(node);
-    allPyQuestion(py);
+    ///  JAVASCRIPT
+    for (let i = 0; i <= js.length - 1; i++) {
+      let list = `
+  <div>
+  <ul>
+              <li>
+                <label for="user--question">JavaScript</label>
+              </li>
+              <li><p>${js[i].title}</p></li>
+            </ul>
+  
+            <ul>
+              <li>Variantlar</li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${js[i].question1}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${js[i].question2}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${js[i].question3}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${js[i].answer} </p>
+              </li>
+              <li>
+                <hr />
+              </li>
+            </ul>
+  
+  </div>
+  `;
+      newquestionList.insertAdjacentHTML("beforeend", list);
+    }
+
+    ///  C++;
+    for (let i = 0; i <= cpp.length - 1; i++) {
+      let list = `
+  <div>
+  <ul>
+              <li>
+                <label for="user--question">C++</label>
+              </li>
+              <li><p>${cpp[i].title}</p></li>
+            </ul>
+  
+            <ul>
+              <li>Variantlar</li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${cpp[i].question1}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${cpp[i].question2}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${cpp[i].question3}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${cpp[i].answer} </p>
+              </li>
+              <li>
+                <hr />
+              </li>
+            </ul>
+  
+  </div>
+  `;
+      newquestionList.insertAdjacentHTML("beforeend", list);
+    }
+
+    //  FLUTTER
+    for (let i = 0; i <= fl.length - 1; i++) {
+      let list = `
+  <div>
+  <ul>
+              <li>
+                <label for="user--question">Flutter</label>
+              </li>
+              <li><p>${fl[i].title}</p></li>
+            </ul>
+  
+            <ul>
+              <li>Variantlar</li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${fl[i].question1}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${fl[i].question2}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${fl[i].question3}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${fl[i].answer} lore</p>
+              </li>
+              <li>
+                <hr />
+              </li>
+            </ul>
+  
+  </div>
+  `;
+      newquestionList.insertAdjacentHTML("beforeend", list);
+    }
+
+    // NODE JS
+    for (let i = 0; i <= node.length - 1; i++) {
+      let list = `
+  <div>
+  <ul>
+              <li>
+                <label for="user--question">Node JS</label>
+              </li>
+              <li><p>${node[i].title}</p></li>
+            </ul>
+  
+            <ul>
+              <li>Variantlar</li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${node[i].question1}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${node[i].question2}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${node[i].question3}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${node[i].answer} </p>
+              </li>
+              <li>
+                <hr />
+              </li>
+            </ul>
+  
+  </div>
+  `;
+      newquestionList.insertAdjacentHTML("beforeend", list);
+    }
+    // JAVA
+    for (let i = 0; i <= ja.length - 1; i++) {
+      let list = `
+  <div>
+  <ul>
+              <li>
+                <label for="user--question">Java</label>
+              </li>
+              <li><p>${ja[i].title}</p></li>
+            </ul>
+  
+            <ul>
+              <li>Variantlar</li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${ja[i].question1}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${ja[i].question2}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${ja[i].question3}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${ja[i].answer} </p>
+              </li>
+              <li>
+                <hr />
+              </li>
+            </ul>
+  
+  </div>
+  `;
+      newquestionList.insertAdjacentHTML("beforeend", list);
+    }
+
+    //  PYTHON
+    for (let i = 0; i <= py.length - 1; i++) {
+      let list = `
+  <div>
+  <ul>
+              <li>
+                <label for="user--question">Python</label>
+              </li>
+              <li><p>${py[i].title}</p></li>
+            </ul>
+  
+            <ul>
+              <li>Variantlar</li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${py[i].question1}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${py[i].question2}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${py[i].question3}</p>
+              </li>
+              <li>
+                <input type="radio" name="add" />
+                <p>${py[i].answer} </p>
+              </li>
+              <li>
+                <hr />
+              </li>
+            </ul>
+  
+  </div>
+  `;
+      newquestionList.insertAdjacentHTML("beforeend", list);
+    }
   }
 }
 
