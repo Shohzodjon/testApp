@@ -186,9 +186,6 @@
                     <span
                       class="question1--validation admin--validation"
                     ></span>
-                    <!-- <button class="question--clear">
-                      <i class="bi bi-x"></i>
-                    </button> -->
                   </label>
                 </li>
                 <li>
@@ -204,9 +201,6 @@
                     <span
                       class="question2--validation admin--validation"
                     ></span>
-                    <!-- <button class="question--clear">
-                      <i class="bi bi-x"></i>
-                    </button> -->
                   </label>
                 </li>
                 <li>
@@ -222,9 +216,6 @@
                     <span
                       class="question3--validation admin--validation"
                     ></span>
-                    <!-- <button class="question--clear">
-                      <i class="bi bi-x"></i>
-                    </button> -->
                   </label>
                 </li>
                 <li>
@@ -237,9 +228,7 @@
                       id="right--answer"
                       autocomplete="off"
                     />
-                    <!-- <button class="question--clear">
-                      <i class="bi bi-x"></i>
-                    </button> -->
+
                     <span
                       class="question4--validation admin--validation"
                     ></span>
@@ -251,6 +240,16 @@
         </div>
 
         <!-- end of add--test  -->
+        <div class="show--newquestion--list">
+          <div class="newquestion--list--inside">
+            <div class="flex">
+              <h2 class="check--empty"></h2>
+              <div class="newquestion--list--close">
+                <button id="newqusetion--close">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <div class="admin--modal">
         <p>
@@ -274,12 +273,13 @@
           qo'shildi
         </p>
 
-        <form class="admin--btns">
-          <button class="admin--cancel" type="submit">Cancel</button>
+        <div class="admin--btns">
+          <button class="admin--cancel">Cancel</button>
           <button class="admin--save">Save</button>
-        </form>
+        </div>
       </div>
       <div class="admin--overlay"></div>
+
       <!--  end of rightSide  -->
     </section>
     <script src="./adminPanel.js"></script>

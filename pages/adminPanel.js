@@ -147,96 +147,178 @@ let test = {
   question3: "",
   answer: "",
 };
-let newObject;
-let obj = {
-  js: [],
-  py: [],
-  cpp: [],
-  ja: [],
-  fl: [],
-  node: [],
-};
+let js = [],
+  py = [],
+  cpp = [],
+  ja = [],
+  fl = [],
+  node = [];
 //
 function selectSubject(sub) {
   switch (sub.subject) {
     case "js": {
-      obj.js.push(sub);
-      newObject = { ...obj };
+      js.push(sub);
+      console.log("pUSH");
       break;
     }
     case "py": {
-      obj.py.push(sub);
-      newObject = { ...obj };
+      py.push(sub);
+      console.log("Python");
       break;
     }
     case "cpp": {
-      obj.cpp.push(sub);
-      newObject = { ...obj };
-
+      cpp.push(sub);
+      console.log("C++");
       break;
     }
     case "ja": {
-      obj.ja.push(sub);
-      newObject = { ...obj };
+      ja.push(sub);
+      console.log("Java");
       break;
     }
     case "fl": {
-      obj.fl.push(sub);
-      newObject = { ...obj };
+      fl.push(sub);
+      console.log("Flutter");
       break;
     }
     case "node": {
-      obj.node.push(sub);
-      newObject = { ...obj };
+      node.push(sub);
+      console.log("Node js");
       break;
     }
   }
 }
+// GET DATA FROM LOCALSTORAGE
+let jsData = localStorage.getItem("newJavaScript");
+let pyData = localStorage.getItem("newPython");
+let cppData = localStorage.getItem("newCplus");
+let flData = localStorage.getItem("newFlutter");
+let nodeData = localStorage.getItem("newNodeJs");
+let jaData = localStorage.getItem("newJava");
+///  Parse DATA
 
 // SET LOCALSTORAGE
-function setLocalStorage(info) {
-  let testJSON = JSON.stringify(info);
-  localStorage.setItem("newQuestion", `${testJSON}`);
+function setLocalStorageJS(js) {
+  if (jsData.length > 0) {
+    let parseJsData = JSON.parse(jsData);
+    let concatJsData = parseJsData.concat(js);
+    let stringJs = JSON.stringify(concatJsData);
+    localStorage.setItem("newJavaScript", `${stringJs}`);
+  } else {
+    let jsTest = JSON.stringify(js);
+    localStorage.setItem("newJavaScript", `${jsTest}`);
+  }
+}
+///
+function setLocalStoragePY(py) {
+  if (pyData.length > 0) {
+    let parsePyData = JSON.parse(pyData);
+    let concatPyData = parsePyData.concat(py);
+    let stringPy = JSON.stringify(concatPyData);
+    localStorage.setItem("newPython", `${stringPy}`);
+  } else {
+    let pyTest = JSON.stringify(py);
+    localStorage.setItem("newPython", `${pyTest}`);
+  }
+}
+//
+function setLocalStorageCPP(cpp) {
+  if (cppData.length > 0) {
+    let parseCppData = JSON.parse(cppData);
+    let concatCppData = parseCppData.concat(cpp);
+    let stringCpp = JSON.stringify(concatCppData);
+    localStorage.setItem("newCplus", `${stringCpp}`);
+  } else {
+    let cppTest = JSON.stringify(cpp);
+    localStorage.setItem("newCplus", `${cppTest}`);
+  }
+}
+//
+function setLocalStorageJA(ja) {
+  if (jaData.length > 0) {
+    let parseJaData = JSON.parse(jaData);
+    let concatJaData = parseJaData.concat(ja);
+    let stringJa = JSON.stringify(concatJaData);
+    localStorage.setItem("newJava", `${stringJa}`);
+  } else {
+    let jaTest = JSON.stringify(ja);
+    localStorage.setItem("newJava", `${jaTest}`);
+  }
+}
+//
+function setLocalStorageFL(fl) {
+  if (flData.length > 0) {
+    let parseFlData = JSON.parse(flData);
+    let concatFlData = parseFlData.concat(fl);
+    let stringFl = JSON.stringify(concatFlData);
+    localStorage.setItem("newFlutter", `${stringFl}`);
+  } else {
+    let flTest = JSON.stringify(fl);
+    localStorage.setItem("newFlutter", `${flTest}`);
+  }
+}
+//
+function setLocalStorageNode(node) {
+  if (nodeData.length > 0) {
+    let parseNodeData = JSON.parse(nodeData);
+    let concatNodeData = parseNodeData.concat(node);
+    let stringNode = JSON.stringify(concatNodeData);
+    localStorage.setItem("newNodeJs", `${stringNode}`);
+  } else {
+    let nodeTest = JSON.stringify(node);
+    localStorage.setItem("newNodeJs", `${nodeTest}`);
+  }
+}
+function setLocalStorage(js, py, cpp, fl, node, ja) {
+  let jsTest = JSON.stringify(js);
+  localStorage.setItem("newJavaScript", `${jsTest}`);
+  let pyTest = JSON.stringify(py);
+  localStorage.setItem("newPython", `${pyTest}`);
+  let cppTest = JSON.stringify(cpp);
+  localStorage.setItem("newCplus", `${cppTest}`);
+  let flTest = JSON.stringify(fl);
+  localStorage.setItem("newFlutter", `${flTest}`);
+  let nodeTest = JSON.stringify(node);
+  localStorage.setItem("newNodeJs", `${nodeTest}`);
+  let jaTest = JSON.stringify(ja);
+  localStorage.setItem("newJava", jaTest);
 }
 
-function removeItem(data) {
-  if (data.js.length > 0) {
-    // // for (let i = 0; i <= data.js.length - 1; i++) {
-    //   data.js[i] = "";
-    // }
-    data.js = [];
-    jsLeng.textContent = obj.js.length;
+function removeItem(js, py, ja, cpp, node, fl) {
+  if (js.length > 0) {
+    js = [];
+    jsLeng.textContent = js.length;
   }
-  if (data.py.length > 0) {
-    data.py = [];
-    pyLeng.textContent = obj.py.length;
+  if (py.length > 0) {
+    py = [];
+    pyLeng.textContent = py.length;
   }
-  if (data.ja.length > 0) {
-    data.ja = [];
-    jaLeng.textContent = obj.ja.length;
+  if (ja.length > 0) {
+    ja = [];
+    jaLeng.textContent = ja.length;
   }
-  if (data.cpp.length > 0) {
-    data.cpp = [];
-    cppLeng.textContent = obj.cpp.length;
+  if (cpp.length > 0) {
+    cpp = [];
+    cppLeng.textContent = cpp.length;
   }
-  if (data.fl.length > 0) {
-    data.fl = [];
-    flLeng.textContent = obj.fl.length;
+  if (fl.length > 0) {
+    fl = [];
+    flLeng.textContent = fl.length;
   }
-  if (data.node.length > 0) {
-    data.node = [];
-    nodeLeng.textContent = obj.node.length;
+  if (node.length > 0) {
+    node = [];
+    nodeLeng.textContent = node.length;
   }
 }
 
 ///
-function questionNumber(obj) {
-  jsLeng.textContent = obj.js.length;
-  jaLeng.textContent = obj.ja.length;
-  cppLeng.textContent = obj.cpp.length;
-  pyLeng.textContent = obj.py.length;
-  flLeng.textContent = obj.fl.length;
-  nodeLeng.textContent = obj.node.length;
+function questionNumber(js, ja, cpp, py, fl, node) {
+  jsLeng.textContent = js.length;
+  jaLeng.textContent = ja.length;
+  cppLeng.textContent = cpp.length;
+  pyLeng.textContent = py.length;
+  flLeng.textContent = fl.length;
+  nodeLeng.textContent = node.length;
 }
 //console.log(obj.js[1]);
 selectQuestion.addEventListener("change", (e) => {
@@ -267,7 +349,9 @@ addNewQuestion.addEventListener("click", () => {
     };
 
     selectSubject(test);
-    questionNumber(obj);
+    questionNumber(js, ja, cpp, py, fl, node);
+
+    //
 
     ////
     (userQusetion.value = ""),
@@ -277,39 +361,309 @@ addNewQuestion.addEventListener("click", () => {
     rightAnswer.value = "";
   }
 });
+// SAVE QUESTION
+saveQuestion.addEventListener("click", () => {
+  adminModal.classList.toggle("adimin--active");
+  adminOverlay.style.display = "block";
+});
 
 ///  ADMIN CANCEL BTN
 adminCancelBtn.addEventListener("click", () => {
   adminModal.classList.toggle("adimin--active");
   adminOverlay.style.display = "none";
 
-  removeItem(obj);
-  console.log("ddd", obj);
+  removeItem(js, py, ja, cpp, node, fl);
 });
+
 ///   ADMIN SAVE BTN
 adminSaveBtn.addEventListener("click", () => {
+  setLocalStorageJS(js);
+  setLocalStoragePY(py);
+  setLocalStorageJA(ja);
+  setLocalStorageFL(fl);
+  setLocalStorageCPP(cpp);
+  setLocalStorageNode(node);
+  removeItem(js, py, ja, cpp, node, fl);
   adminModal.classList.toggle("adimin--active");
   adminOverlay.style.display = "none";
+  //
+  jsLeng.textContent = 0;
+  jaLeng.textContent = 0;
+  cppLeng.textContent = 0;
+  pyLeng.textContent = 0;
+  flLeng.textContent = 0;
+  nodeLeng.textContent = 0;
 });
 
-////   SAVE ALL QUESTION FUNCTION
+const newquestionList = document.querySelector(".newquestion--list--inside");
+const showNewquestionList = document.querySelector(".show--newquestion--list");
+const newqusetionClose = document.querySelector("#newqusetion--close");
+const showTest = document.querySelector(".show--test");
+const checkEmpty = document.querySelector(".check--empty");
 
-saveQuestion.addEventListener("click", () => {
-  adminModal.classList.toggle("adimin--active");
-  adminOverlay.style.display = "block";
-  console.log("new", obj);
-  setLocalStorage(newObject);
+showTest.addEventListener("click", () => {
+  showNewquestionList.style.display = "block";
+  checkArrayInfo(js, cpp, py, ja, node, py, fl);
 });
 
-let time = new Date();
-console.log(time);
-let day = time.getDay();
-console.log(day);
-let month = time.getMonth();
-console.log("month", month);
-let clock = time.getHours();
-console.log("clock", clock);
-let minut = time.getMinutes();
-console.log("min", minut);
-let secund = time.getSeconds();
-console.log("secund", secund);
+newqusetionClose.addEventListener("click", () => {
+  showNewquestionList.style.display = "none";
+});
+
+function checkArrayInfo(js, cpp, fl, py, ja, node) {
+  if (
+    js.length === 0 &&
+    cpp.length === 0 &&
+    fl.length === 0 &&
+    py.length === 0 &&
+    ja.length === 0 &&
+    node.length === 0
+  ) {
+    checkEmpty.textContent = "Yangi testlar qoshilmagan";
+  } else {
+    allCppQuestion(cpp);
+    allFlQuestion(fl);
+    allJaQuestion(ja);
+    allJsQuestion(js);
+    allNodeQuestion(node);
+    allPyQuestion(py);
+  }
+}
+
+function allJsQuestion(js) {
+  for (let i = 0; i <= js.length - 1; i++) {
+    let list = `
+<div>
+<ul>
+            <li>
+              <label for="user--question">JavaScript</label>
+            </li>
+            <li><p>${js[i].title}</p></li>
+          </ul>
+
+          <ul>
+            <li>Variantlar</li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${js[i].question1}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${js[i].question2}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${js[i].question3}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${js[i].answer} lore</p>
+            </li>
+            <li>
+              <hr />
+            </li>
+          </ul>
+
+</div>
+`;
+    newquestionList.insertAdjacentHTML("beforeend", list);
+  }
+}
+function allCppQuestion(cpp) {
+  for (let i = 0; i <= cpp.length - 1; i++) {
+    let list = `
+<div>
+<ul>
+            <li>
+              <label for="user--question">C++</label>
+            </li>
+            <li><p>${cpp[i].title}</p></li>
+          </ul>
+
+          <ul>
+            <li>Variantlar</li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${cpp[i].question1}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${cpp[i].question2}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${cpp[i].question3}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${cpp[i].answer} lore</p>
+            </li>
+            <li>
+              <hr />
+            </li>
+          </ul>
+
+</div>
+`;
+    newquestionList.insertAdjacentHTML("beforeend", list);
+  }
+}
+
+function allFlQuestion(fl) {
+  for (let i = 0; i <= fl.length - 1; i++) {
+    let list = `
+<div>
+<ul>
+            <li>
+              <label for="user--question">Flutter</label>
+            </li>
+            <li><p>${fl[i].title}</p></li>
+          </ul>
+
+          <ul>
+            <li>Variantlar</li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${fl[i].question1}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${fl[i].question2}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${fl[i].question3}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${fl[i].answer} lore</p>
+            </li>
+            <li>
+              <hr />
+            </li>
+          </ul>
+
+</div>
+`;
+    newquestionList.insertAdjacentHTML("beforeend", list);
+  }
+}
+
+function allNodeQuestion(node) {
+  for (let i = 0; i <= node.length - 1; i++) {
+    let list = `
+<div>
+<ul>
+            <li>
+              <label for="user--question">Node JS</label>
+            </li>
+            <li><p>${node[i].title}</p></li>
+          </ul>
+
+          <ul>
+            <li>Variantlar</li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${node[i].question1}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${node[i].question2}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${node[i].question3}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${node[i].answer} lore</p>
+            </li>
+            <li>
+              <hr />
+            </li>
+          </ul>
+
+</div>
+`;
+    newquestionList.insertAdjacentHTML("beforeend", list);
+  }
+}
+
+function allJaQuestion(ja) {
+  for (let i = 0; i <= ja.length - 1; i++) {
+    let list = `
+<div>
+<ul>
+            <li>
+              <label for="user--question">Java</label>
+            </li>
+            <li><p>${ja[i].title}</p></li>
+          </ul>
+
+          <ul>
+            <li>Variantlar</li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${ja[i].question1}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${ja[i].question2}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${ja[i].question3}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${ja[i].answer} lore</p>
+            </li>
+            <li>
+              <hr />
+            </li>
+          </ul>
+
+</div>
+`;
+    newquestionList.insertAdjacentHTML("beforeend", list);
+  }
+}
+function allPyQuestion(py) {
+  for (let i = 0; i <= py.length - 1; i++) {
+    let list = `
+<div>
+<ul>
+            <li>
+              <label for="user--question">Python</label>
+            </li>
+            <li><p>${py[i].title}</p></li>
+          </ul>
+
+          <ul>
+            <li>Variantlar</li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${py[i].question1}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${py[i].question2}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${py[i].question3}</p>
+            </li>
+            <li>
+              <input type="radio" name="add" />
+              <p>${py[i].answer} lore</p>
+            </li>
+            <li>
+              <hr />
+            </li>
+          </ul>
+
+</div>
+`;
+    newquestionList.insertAdjacentHTML("beforeend", list);
+  }
+}

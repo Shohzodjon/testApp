@@ -72,10 +72,10 @@ function startTime() {
 
 // END OF SET TIME
 
-let newInfo = localStorage.getItem("newQuestion");
+let newInfo = localStorage.getItem("newFlutter");
 let newInfoOb = JSON.parse(newInfo);
 console.log("fromLocal", newInfoOb);
-let newQuestionList = newInfoOb.fl;
+let newQuestionList = newInfoOb;
 
 if (newQuestionList.length == 0) {
   testRender.innerHTML = "<h2>Test yoq </h2>";

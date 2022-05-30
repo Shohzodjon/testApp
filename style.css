@@ -180,7 +180,7 @@ a:active {
   flex-direction: column;
 
   height: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem;
 }
 .navbar--top {
   height: 30%;
@@ -252,7 +252,7 @@ a:active {
 }
 .navbar--bottom {
   margin-bottom: 1rem;
-  margin-top: 27rem;
+  margin-top: 28rem;
 }
 .navbar--bottom > ul > li {
   display: flex;
@@ -273,6 +273,7 @@ a:active {
 /*   RIGHT SIDE  */
 .right--side {
   width: 1200px;
+  position: relative;
 }
 .right--side__top {
   background: #fff;
@@ -334,8 +335,8 @@ a:active {
 
 .uic--li_1 {
   position: absolute;
-  top: 14%;
-  left: 18%;
+  top: 90px;
+  left: 20px;
   width: 4%;
   height: 2px;
   border-radius: 0.4rem;
@@ -343,8 +344,8 @@ a:active {
 }
 .uic--li_2 {
   position: absolute;
-  top: 13.8%;
-  left: 25.3%;
+  top: 90px;
+  left: 118px;
   width: 6%;
   height: 2px;
   border-radius: 0.4rem;
@@ -450,22 +451,21 @@ a:active {
   background: #fafafb;
   margin: 0 auto;
   padding: 2rem 2.5rem;
-  margin-top: 1.9rem;
-  width: 1065px;
-  height: 540px;
+  margin-top: 1.5rem;
+  width: 98%;
+  height: 543px;
   overflow-y: scroll;
-  margin: 1rem;
 }
 .applicant--level {
   display: flex;
   align-items: center;
-  margin: 0.3rem 0;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 .applicant--level > li {
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   line-height: 16px;
   color: #8492a6;
 }
@@ -485,10 +485,13 @@ a:active {
 .applicant--list {
   display: flex;
   align-items: center;
-  background: #fff;
   width: 100%;
-  padding: 0.8rem 1.5rem 0.4rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 1rem;
+}
+.applicants--wrapp {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 1rem;
 }
 .first--info {
   width: 34%;

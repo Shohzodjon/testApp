@@ -167,11 +167,14 @@ for (let i = 0; i <= data.length - 1; i++) {
       <a href="${data[i].link ? data[i].link : "#"}" class="pages--link">${
       data[i].title
     }</a>
-    
-    <ul>
-      <li><i class="bi bi-calendar-event"></i> <span>Thu. 24</span></li>
-      <li><i class="bi bi-camera"></i> <span>11:00 - 12:00</span></li>
-    </ul>
+    <!--  <ul> <li><i class="bi bi-calendar-event"></i> <span>Thu. 24</span></li>
+    <li><i class="bi bi-camera"></i> <span>11:00 - 12:00</span></li>
+     </ul> 
+    -->
+    <div id="test">
+    <p class="item--span">${data[i].text}</p>
+    <span class="test--span">${data[i].text2}<span>
+</div>  
     
      </div>
     
@@ -210,7 +213,7 @@ for (let i = 0; i <= data.length - 1; i++) {
 
 // BEGIN APPLICANTS LISTS
 
-const applicantSection = document.querySelector(".applicants--section");
+const applicantSection = document.querySelector(".applicants--wrapp");
 
 const lists = [
   {

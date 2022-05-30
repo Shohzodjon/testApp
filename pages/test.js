@@ -73,7 +73,7 @@ function startTime() {
 
 // END OF SET TIME
 
-let newInfo = localStorage.getItem("newQuestion");
+let newInfo = localStorage.getItem("newJavaScript");
 let newInfoOb = JSON.parse(newInfo);
 console.log("fromLocal", newInfoOb);
 let newQuestionList;
@@ -97,7 +97,7 @@ const testLists = [
   },
 ];
 
-newQuestionList = testLists.concat(newInfoOb.js);
+newQuestionList = testLists.concat(newInfoOb);
 
 /////   RANDOM QUESTION
 /*

@@ -72,7 +72,7 @@ function startTime() {
 
 // END OF SET TIME
 
-let newInfo = localStorage.getItem("newQuestion");
+let newInfo = localStorage.getItem("newPython");
 let newInfoOb = JSON.parse(newInfo);
 console.log("fromLocal", newInfoOb);
 
@@ -97,7 +97,7 @@ const testLists = [
   },
 ];
 
-newQuestionList = testLists.concat(newInfoOb.py);
+newQuestionList = testLists.concat(newInfoOb);
 
 if (newQuestionList.length == 0) {
   testRender.innerHTML = "<h2>Test yoq </h2>";
