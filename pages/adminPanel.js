@@ -400,9 +400,53 @@ const showNewquestionList = document.querySelector(".show--newquestion--list");
 const newqusetionClose = document.querySelector("#newqusetion--close");
 const showTest = document.querySelector(".show--test");
 const checkEmpty = document.querySelector(".check--empty");
+// const textOne = document.querySelector(".first--text");
+// const textTwo = document.querySelector(".second--text");
+// const textThree = document.querySelector(".third--text");
+// const textFour = document.querySelector(".fourth--text");
+// const textFive = document.querySelector(".five--text");
+// const textZero = document.querySelector(".qustion--title");++++++
 
 showTest.addEventListener("click", () => {
   showNewquestionList.style.display = "block";
+
+  for (let i = 0; i <= js.length - 1; i++) {
+    let list = `
+         <div>
+            <ul>
+                <li>
+                  <label for="user--question">JavaScript</label>
+                </li>
+                <li><p>${js[i].title}</p></li>
+              </ul>
+    
+              <ul>
+                <li>Variantlar</li>
+                <li>
+                  <input type="radio" name="add" />
+                  <p>${js[i].question1}</p>
+                </li>
+                <li>
+                  <input type="radio" name="add" />
+                  <p>${js[i].question2}</p>
+                </li>
+                <li>
+                  <input type="radio" name="add" />
+                  <p>${js[i].question3}</p>
+                </li>
+                <li>
+                  <input type="radio" name="add" />
+                  <p>${js[i].answer} </p>
+                </li>
+                <li>
+                  <hr />
+                </li>
+              </ul>
+         </div>
+    `;
+    newquestionList.insertAdjacentHTML("beforeend", list);
+  }
+
   checkArrayInfo(js, cpp, py, ja, node, py, fl);
 });
 
@@ -422,49 +466,50 @@ function checkArrayInfo(js, cpp, fl, py, ja, node) {
     checkEmpty.textContent = "Yangi testlar qoshilmagan";
   } else {
     ///  JAVASCRIPT
+    /*
     for (let i = 0; i <= js.length - 1; i++) {
       let list = `
-  <div>
-  <ul>
-              <li>
-                <label for="user--question">JavaScript</label>
-              </li>
-              <li><p>${js[i].title}</p></li>
-            </ul>
-  
-            <ul>
-              <li>Variantlar</li>
-              <li>
-                <input type="radio" name="add" />
-                <p>${js[i].question1}</p>
-              </li>
-              <li>
-                <input type="radio" name="add" />
-                <p>${js[i].question2}</p>
-              </li>
-              <li>
-                <input type="radio" name="add" />
-                <p>${js[i].question3}</p>
-              </li>
-              <li>
-                <input type="radio" name="add" />
-                <p>${js[i].answer} </p>
-              </li>
-              <li>
-                <hr />
-              </li>
-            </ul>
-  
-  </div>
-  `;
+           <div>
+              <ul>
+                  <li>
+                    <label for="user--question">C++</label>
+                  </li>
+                  <li><p>${js[i].title}</p></li>
+                </ul>
+      
+                <ul>
+                  <li>Variantlar</li>
+                  <li>
+                    <input type="radio" name="add" />
+                    <p>${js[i].question1}</p>
+                  </li>
+                  <li>
+                    <input type="radio" name="add" />
+                    <p>${js[i].question2}</p>
+                  </li>
+                  <li>
+                    <input type="radio" name="add" />
+                    <p>${js[i].question3}</p>
+                  </li>
+                  <li>
+                    <input type="radio" name="add" />
+                    <p>${js[i].answer} </p>
+                  </li>
+                  <li>
+                    <hr />
+                  </li>
+                </ul>
+           </div>
+      `;
       newquestionList.insertAdjacentHTML("beforeend", list);
     }
+    */
 
     ///  C++;
     for (let i = 0; i <= cpp.length - 1; i++) {
       let list = `
-  <div>
-  <ul>
+        <div>
+            <ul>
               <li>
                 <label for="user--question">C++</label>
               </li>
@@ -493,8 +538,7 @@ function checkArrayInfo(js, cpp, fl, py, ja, node) {
                 <hr />
               </li>
             </ul>
-  
-  </div>
+         </div>
   `;
       newquestionList.insertAdjacentHTML("beforeend", list);
     }
@@ -502,8 +546,8 @@ function checkArrayInfo(js, cpp, fl, py, ja, node) {
     //  FLUTTER
     for (let i = 0; i <= fl.length - 1; i++) {
       let list = `
-  <div>
-  <ul>
+         <div>
+            <ul>
               <li>
                 <label for="user--question">Flutter</label>
               </li>
@@ -541,8 +585,8 @@ function checkArrayInfo(js, cpp, fl, py, ja, node) {
     // NODE JS
     for (let i = 0; i <= node.length - 1; i++) {
       let list = `
-  <div>
-  <ul>
+          <div>
+             <ul>
               <li>
                 <label for="user--question">Node JS</label>
               </li>
@@ -572,15 +616,15 @@ function checkArrayInfo(js, cpp, fl, py, ja, node) {
               </li>
             </ul>
   
-  </div>
+         </div>
   `;
       newquestionList.insertAdjacentHTML("beforeend", list);
     }
     // JAVA
     for (let i = 0; i <= ja.length - 1; i++) {
       let list = `
-  <div>
-  <ul>
+        <div>
+           <ul>
               <li>
                 <label for="user--question">Java</label>
               </li>
@@ -610,7 +654,7 @@ function checkArrayInfo(js, cpp, fl, py, ja, node) {
               </li>
             </ul>
   
-  </div>
+         </div>
   `;
       newquestionList.insertAdjacentHTML("beforeend", list);
     }
@@ -618,8 +662,8 @@ function checkArrayInfo(js, cpp, fl, py, ja, node) {
     //  PYTHON
     for (let i = 0; i <= py.length - 1; i++) {
       let list = `
-  <div>
-  <ul>
+       <div>
+          <ul>
               <li>
                 <label for="user--question">Python</label>
               </li>
@@ -649,7 +693,7 @@ function checkArrayInfo(js, cpp, fl, py, ja, node) {
               </li>
             </ul>
   
-  </div>
+        </div>
   `;
       newquestionList.insertAdjacentHTML("beforeend", list);
     }
@@ -659,8 +703,8 @@ function checkArrayInfo(js, cpp, fl, py, ja, node) {
 function allJsQuestion(js) {
   for (let i = 0; i <= js.length - 1; i++) {
     let list = `
-<div>
-<ul>
+        <div>
+          <ul>
             <li>
               <label for="user--question">JavaScript</label>
             </li>
@@ -689,8 +733,7 @@ function allJsQuestion(js) {
               <hr />
             </li>
           </ul>
-
-</div>
+      </div>
 `;
     newquestionList.insertAdjacentHTML("beforeend", list);
   }
@@ -698,8 +741,8 @@ function allJsQuestion(js) {
 function allCppQuestion(cpp) {
   for (let i = 0; i <= cpp.length - 1; i++) {
     let list = `
-<div>
-<ul>
+       <div>
+          <ul>
             <li>
               <label for="user--question">C++</label>
             </li>
@@ -728,8 +771,7 @@ function allCppQuestion(cpp) {
               <hr />
             </li>
           </ul>
-
-</div>
+       </div>
 `;
     newquestionList.insertAdjacentHTML("beforeend", list);
   }
@@ -738,8 +780,8 @@ function allCppQuestion(cpp) {
 function allFlQuestion(fl) {
   for (let i = 0; i <= fl.length - 1; i++) {
     let list = `
-<div>
-<ul>
+       <div>
+         <ul>
             <li>
               <label for="user--question">Flutter</label>
             </li>
@@ -768,8 +810,7 @@ function allFlQuestion(fl) {
               <hr />
             </li>
           </ul>
-
-</div>
+      </div>
 `;
     newquestionList.insertAdjacentHTML("beforeend", list);
   }
@@ -778,8 +819,8 @@ function allFlQuestion(fl) {
 function allNodeQuestion(node) {
   for (let i = 0; i <= node.length - 1; i++) {
     let list = `
-<div>
-<ul>
+      <div>
+         <ul>
             <li>
               <label for="user--question">Node JS</label>
             </li>
@@ -808,8 +849,7 @@ function allNodeQuestion(node) {
               <hr />
             </li>
           </ul>
-
-</div>
+      </div>
 `;
     newquestionList.insertAdjacentHTML("beforeend", list);
   }
@@ -818,8 +858,8 @@ function allNodeQuestion(node) {
 function allJaQuestion(ja) {
   for (let i = 0; i <= ja.length - 1; i++) {
     let list = `
-<div>
-<ul>
+      <div>
+         <ul>
             <li>
               <label for="user--question">Java</label>
             </li>
@@ -848,8 +888,7 @@ function allJaQuestion(ja) {
               <hr />
             </li>
           </ul>
-
-</div>
+      </div>
 `;
     newquestionList.insertAdjacentHTML("beforeend", list);
   }
@@ -857,8 +896,8 @@ function allJaQuestion(ja) {
 function allPyQuestion(py) {
   for (let i = 0; i <= py.length - 1; i++) {
     let list = `
-<div>
-<ul>
+     <div>
+        <ul>
             <li>
               <label for="user--question">Python</label>
             </li>
@@ -887,9 +926,9 @@ function allPyQuestion(py) {
               <hr />
             </li>
           </ul>
-
-</div>
+      </div>
 `;
     newquestionList.insertAdjacentHTML("beforeend", list);
   }
 }
+console.log("js", js);

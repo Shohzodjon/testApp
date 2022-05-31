@@ -6,6 +6,7 @@ const error2 = document.querySelector(".error2");
 const error3 = document.querySelector(".error3");
 const registerButton = document.querySelector(".register--button");
 const register = document.querySelector(".register");
+const route = document.querySelector(".route");
 let nameIs = false;
 let emailIs = false;
 let passIs = false;
@@ -60,7 +61,6 @@ function checkPassword(userPassword) {
 }
 
 registerButton.addEventListener("click", (e) => {
-  e.preventDefault();
   checkName(userName);
   checkEmail(userEmail);
   checkPassword(userPassword);
@@ -68,7 +68,7 @@ registerButton.addEventListener("click", (e) => {
     userName.value = "";
     userEmail.value = "";
     userPassword.value = "";
-    registerButton.children[0].baseURI = "";
+    route.src = "./main.html";
   }
 });
 console.log("child", registerButton.children[0].baseURI);
